@@ -1,8 +1,9 @@
 <?php
 
-    include "connect.php";  
+      
 
     function insertRecord ($name) {
+        include "connect.php";
         // Insert into customer table
         $sql = "INSERT INTO customers (name) VALUES ('$name')";
 
