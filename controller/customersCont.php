@@ -8,9 +8,8 @@
 
     function updateCustPhone ($phone) {
         include "model/customersModel.php";
-        // $cID = selectRecord('id');
-        $cID=7;
-        updateRecord ('phone',$phone,$cID);
+        $cID = selectRecord('id');
+        // updateRecord ('phone',$phone,$cID);
     }
 
 ?>
