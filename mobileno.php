@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/style.css?v=1.0.2" />
 
     <?php
-        include "../controller/customersCont.php";
+        include "controller/customersCont.php";
         $name = $_POST['name'];
         insertCustName($name);
     ?>

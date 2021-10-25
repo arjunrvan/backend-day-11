@@ -1,6 +1,6 @@
 <?php
     function insertRecord($column,$value) {
-        include "../connect.php";
+        include "connect.php";
         $sql = "INSERT INTO customers ($column) VALUES ('$value')";
 
         if (mysqli_query($conn, $sql)) {
