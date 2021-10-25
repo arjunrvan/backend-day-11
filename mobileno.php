@@ -16,7 +16,7 @@
     <?php
     include "controller/customers.php";
     $name = $_POST['name'];
-    insertRecord($name);
+    insertCustName($name);
     ?>
 
 </head>
