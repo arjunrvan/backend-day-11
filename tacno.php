@@ -14,25 +14,16 @@
 
     <?php
 
-    include "connect.php";
-
+    include "controller/customersCont.php";
     $phone = $_POST['phone'];
 
     // Check customer ID
-    $result = mysqli_query($conn,"SELECT id FROM customers ORDER BY id DESC LIMIT 1");
-    $row = mysqli_fetch_array($result);
-    $cID=$row[0];
+    $cID = selectLastCustID();
 
     // Insert into customer table
-    $sql = "UPDATE customers SET phone = '$phone' WHERE id = $cID";
+    updateCustPhone ($phone,$cID);
 
-    if (mysqli_query($conn, $sql)) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-    // Generate random tac
+    // Generate random tac and insert into tac table
     $tac = random_int(100000, 999999);
 
     // Insert into tac table
