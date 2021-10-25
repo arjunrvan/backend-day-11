@@ -14,19 +14,9 @@
     <link rel="stylesheet" type="text/css" href="dist/css/style.css?v=1.0.2" />
 
     <?php
-    include "connect.php";
-
+    include "controller/customers.php";
     $name = $_POST['name'];
-
-    // Insert into customer table
-    $sql = "INSERT INTO customers (name) VALUES ('$name')";
-
-    if (mysqli_query($conn, $sql)) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
+    insertRecord($name);
     ?>
 
 </head>
