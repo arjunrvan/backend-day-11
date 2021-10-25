@@ -13,7 +13,7 @@
 
     function updateCustPhone ($phone,$cID) {
         include "model/customersModel.php";
-        updateRecord ($column,$value,$cID);
+        updateRecord ('phone',$phone,$cID);
     }
 
 ?>

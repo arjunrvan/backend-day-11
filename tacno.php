@@ -14,26 +14,26 @@
 
     <?php
 
-    include "controller/customersCont.php";
-    $phone = $_POST['phone'];
+        include "controller/customersCont.php";
+        $phone = $_POST['phone'];
 
-    // Check customer ID
-    $cID = selectLastCustID();
+        // Check customer ID
+        $cID = selectLastCustID();
 
-    // Insert into customer table
-    updateCustPhone ($phone,$cID);
+        // Insert into customer table
+        updateCustPhone ($phone,$cID);
 
-    // Generate random tac and insert into tac table
-    $tac = random_int(100000, 999999);
+        // Generate random tac and insert into tac table
+        $tac = random_int(100000, 999999);
 
-    // Insert into tac table
-    $sql = "INSERT INTO tac (tac,customer_id) VALUES ('$tac','$cID')";
+        // // Insert into tac table
+        // $sql = "INSERT INTO tac (tac,customer_id) VALUES ('$tac','$cID')";
 
-    if (mysqli_query($conn, $sql)) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+        // if (mysqli_query($conn, $sql)) {
+        //     // echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        // }
 
     ?>
 
