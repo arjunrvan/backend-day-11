@@ -6,13 +6,9 @@
         insertRecord('name',$name);
     }
 
-    function selectLastCustID() {
+    function updateCustPhone ($phone) {
         include "model/customersModel.php";
-        return selectRecord('id');
-    }
-
-    function updateCustPhone ($phone,$cID) {
-        include "model/customersModel.php";
+        $cID = selectRecord('id');
         updateRecord ('phone',$phone,$cID);
     }
 

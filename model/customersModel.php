@@ -15,7 +15,6 @@
         $result = mysqli_query($conn,"SELECT $column FROM customers ORDER BY $column DESC LIMIT 1");
         $row = mysqli_fetch_array($result);
         return $row[0];
-        
     }
 
     function updateRecord ($column,$value,$cID) {

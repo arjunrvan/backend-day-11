@@ -17,11 +17,8 @@
         include "controller/customersCont.php";
         $phone = $_POST['phone'];
 
-        // Check customer ID
-        $cID = selectLastCustID();
-
         // Insert into customer table
-        updateCustPhone ($phone,$cID);
+        updateCustPhone ($phone);
 
         // Generate random tac and insert into tac table
         $tac = random_int(100000, 999999);
