@@ -1,19 +1,11 @@
 <?php
 
-    function insertCustName ($name) {
+    function insertTac ($tac) {
         include "model/customersModel.php";
-        // Insert into customer table
-        insertRecord('name',$name);
-    }
-
-    function selectLastCustID() {
-        include "model/customersModel.php";
-        return selectRecord('id');
-    }
-
-    function updateCustPhone ($phone,$cID) {
-        include "model/customersModel.php";
-        updateRecord ($column,$value,$cID);
+        include "model/tacModel.php";
+        $cID = selectRecord('id');
+        // Insert into tac table
+        insertRecordTac('tac','customer_id',$tac,$cID);
     }
 
 ?>

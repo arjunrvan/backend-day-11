@@ -33,7 +33,7 @@
             <form action="tacno.php" method="post">
                 <input id="phone" name="phone" type="tel">
                 <div class="form_app_submit_container">
-                    <button type="submit" class="form_app_submit btn_blue">Verify <span class="next_arrow_icon" onclick="location.href='tacno.php';"><img src="dist/images/svg/arrow_right_white.svg" alt=""></span></button>
+                    <button type="submit" class="form_app_submit btn_blue">Verify <span class="next_arrow_icon"><img src="dist/images/svg/arrow_right_white.svg" alt=""></span></button>
                 </div>
             </form>
         </div>

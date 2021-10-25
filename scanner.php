@@ -15,19 +15,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/style.css?v=1.0.5" />
 
     <?php
-        include "connect.php";
-
-        
-        // if (($_POST['newName'])) {
-        //     $result = mysqli_query($conn,"SELECT id FROM customers ORDER BY id DESC LIMIT 1");
-        //     $row = mysqli_fetch_array($result);
-        //     $cID=$row[0];
-
-        //     $name = $_POST['newName'];
-        //     mysqli_query($conn,"UPDATE customers SET name = $name WHERE id = $cID");
-            
-        // }
-                                    
+        include "connect.php";                               
                                 
     ?>
 
@@ -65,17 +53,8 @@
                                 <div class="thankyou_datetime_checkin">
                                     <div class="thankyou_desc">You are checked in at</div>
                                     <?php
-                                        $result = mysqli_query($conn,"SELECT id FROM customers ORDER BY id DESC LIMIT 1");
-                                        $row = mysqli_fetch_array($result);
-                                        $cID=$row[0];
 
-                                        date_default_timezone_set('Asia/Singapore');
-                                        $date = date('j M Y');
-                                        $time = date('h:i a');
-
-                                        $dateTime = date('Y-m-d H:i:s');
-
-                                        $result = mysqli_query($conn,"INSERT INTO checkin (date_created,customer_id) VALUES ('$dateTime',$cID)");
+                                        [$date,$time]=insertDate();
 
                                         echo "<div class='thankyou_datetime'><span class='thankyou_time'>".$time."</span>, <span class='thankyou_date'>".$date."</span></div>"
                                     
@@ -165,10 +144,7 @@
                                     <div class="form_group form_name">
                                         <label class="form_lbl">Name</label>
                                         <?php
-                                            
-                                            $result = mysqli_query($conn,"SELECT name FROM customers ORDER BY id DESC LIMIT 1");
-                                            $row = mysqli_fetch_array($result);
-                                            $name=$row[0];
+                                            $name = selectCustName();
                                             echo "<div class='form_val'>".$name."</div>";
                                         ?>
                                         
@@ -177,9 +153,7 @@
                                     <div class="form_group form_mobileno">
                                         <label class="form_lbl">Mobile Number</label>
                                         <?php
-                                            $result = mysqli_query($conn,"SELECT phone FROM customers ORDER BY id DESC LIMIT 1");
-                                            $row = mysqli_fetch_array($result);
-                                            $phone=$row[0];
+                                            $phone = selectCustPhone();
                                             echo "<div class='form_val'>".$phone."</div>";
                                         ?>
                                         
@@ -212,11 +186,7 @@
                                     // var_dump($_POST);
                                     $newName = $_POST["newName"];
                                     if ($newName != "") {
-                                        $result = mysqli_query($conn,"SELECT id FROM customers ORDER BY id DESC LIMIT 1");
-                                        $row = mysqli_fetch_array($result);
-                                        $cID=$row[0];
-                                        
-                                        mysqli_query($conn,"UPDATE customers SET name = '$newName' WHERE id = $cID");
+                                        updateCustName ($newName);
                                     }
                                     
                                 
@@ -234,7 +204,14 @@
                                 <div class="form_group form_name">
                                     <label class="form_lbl">Name</label>
                                     <?php
-                                        echo "<div class='form_val'>".$name."</div>";
+
+                                        $numCh = numCheckin();
+                                        if ($numCh >= 8) {
+                                            echo "<div class='form_val'>".$name."Tick</div>";
+                                        } else {
+                                            echo "<div class='form_val'>".$name."</div>";
+                                        }
+                                        
                                     ?>
                                 </div>
                                 <div class="form_group form_mobileno">
@@ -248,10 +225,7 @@
                                 <div class="form_group form_joined">
                                     <label class="form_lbl">Joined Since</label>
                                     <?php
-                                        $result = mysqli_query($conn,"SELECT date_created FROM customers ORDER BY id DESC LIMIT 1");
-                                        $row = mysqli_fetch_array($result);
-                                        $date=$row[0];
-                                        $date = date('j M Y', strtotime($date));
+                                        $date = custJoinDate();
                                         echo "<div class='form_val'>".$date."</div>";
                                     ?>
                                 </div>
@@ -259,10 +233,7 @@
                                     <label class="form_lbl">Total Check-Ins</label>
 
                                     <?php
-                                        $result = mysqli_query($conn,"SELECT COUNT(id) FROM checkin WHERE customer_id = $cID");
-                                        $row = mysqli_fetch_array($result);
-                                        $numCh = $row[0];
-
+                                        $numCh = numCheckin();
                                         echo "<div class='form_val'>".$numCh."</div>";
                                     
                                     ?>

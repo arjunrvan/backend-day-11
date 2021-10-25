@@ -15,6 +15,7 @@
     <?php
 
         include "controller/customersCont.php";
+        include "controller/tacCont.php";
         $phone = $_POST['phone'];
 
         // Insert into customer table
@@ -24,13 +25,7 @@
         $tac = random_int(100000, 999999);
 
         // // Insert into tac table
-        // $sql = "INSERT INTO tac (tac,customer_id) VALUES ('$tac','$cID')";
-
-        // if (mysqli_query($conn, $sql)) {
-        //     // echo "New record created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        // }
+        insertTac($tac);
 
     ?>
 
