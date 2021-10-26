@@ -19,11 +19,11 @@
 
         $phone = $_POST['phone'];
 
-        // // Update to customer table
+        // Update to customer table
         updateCustPhone ($phone);
 
-        // // Insert into tac table
-        insertTac();
+        // Insert into tac table
+        insertTac ();
 
     ?>
 

@@ -19,7 +19,7 @@
 
     function updateRecord ($column,$value,$cID) {
         include "connect.php";
-        $sql = "UPDATE customers SET $column = $value WHERE id = $cID";
+        $sql = "UPDATE customers SET $column = '$value' WHERE id = $cID";
 
         if (mysqli_query($conn, $sql)) {
             // echo "New record created successfully";

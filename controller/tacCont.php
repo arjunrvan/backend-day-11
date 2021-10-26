@@ -6,7 +6,7 @@
         $tac = random_int(100000, 999999);
         $cID = selectRecord('id');
         // Insert into tac table
-        insertRecordTac('tac','customer_id',$tac,$cID);
+        // insertRecordTac('tac','customer_id',$tac,$cID);
     }
 
 ?>
