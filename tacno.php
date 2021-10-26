@@ -1,10 +1,3 @@
-<?php
-
-    include "controller/customersCont.php";
-    include "controller/tacCont.php";
-
-?>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -21,7 +14,9 @@
 
     <?php
 
-       
+        require "controller/customersCont.php";
+        require "controller/tacCont.php";
+
         $phone = $_POST['phone'];
 
         // Insert into customer table
