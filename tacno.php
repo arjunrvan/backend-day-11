@@ -23,7 +23,7 @@
         updateCustPhone ($phone);
 
         // Insert into tac table
-        // insertTac ();
+        insertTac ();
 
     ?>
 
