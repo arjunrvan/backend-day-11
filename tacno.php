@@ -14,8 +14,8 @@
 
     <?php
 
-        // include "controller/customersCont.php";
-        // include "controller/tacCont.php";
+        include "controller/customersCont.php";
+        include "controller/tacCont.php";
 
         // $phone = $_POST['phone'];
 
