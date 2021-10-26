@@ -14,21 +14,19 @@
 
     <?php
 
-        require "controller/customersCont.php";
-        require "controller/tacCont.php";
+        // include "controller/customersCont.php";
+        // include "controller/tacCont.php";
 
-        var_dump($_POST);
+        // $phone = $_POST['phone'];
 
-        $phone = $_POST['phone'];
+        // // Update to customer table
+        // updateCustPhone ($phone);
 
-        // Insert into customer table
-        updateCustPhone ($phone);
+        // // Generate random tac and insert into tac table
+        // $tac = random_int(100000, 999999);
 
-        // Generate random tac and insert into tac table
-        $tac = random_int(100000, 999999);
-
-        // // Insert into tac table
-        insertTac($tac);
+        // // // Insert into tac table
+        // insertTac($tac);
 
     ?>
 
