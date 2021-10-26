@@ -22,11 +22,8 @@
         // // Update to customer table
         updateCustPhone ($phone);
 
-        // // Generate random tac and insert into tac table
-        // $tac = random_int(100000, 999999);
-
-        // // // Insert into tac table
-        // insertTac($tac);
+        // // Insert into tac table
+        insertTac();
 
     ?>
 
