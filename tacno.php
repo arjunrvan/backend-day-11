@@ -20,7 +20,7 @@
         $phone = $_POST['phone'];
 
         // // Update to customer table
-        // updateCustPhone ($phone);
+        updateCustPhone ($phone);
 
         // // Generate random tac and insert into tac table
         // $tac = random_int(100000, 999999);
