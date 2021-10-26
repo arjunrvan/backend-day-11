@@ -17,7 +17,7 @@
         require "controller/customersCont.php";
         require "controller/tacCont.php";
 
-        var_dump[$_POST];
+        var_dump($_POST);
 
         $phone = $_POST['phone'];
 
