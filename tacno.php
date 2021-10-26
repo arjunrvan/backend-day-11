@@ -17,7 +17,7 @@
         include "controller/customersCont.php";
         include "controller/tacCont.php";
 
-        // $phone = $_POST['phone'];
+        $phone = $_POST['phone'];
 
         // // Update to customer table
         // updateCustPhone ($phone);
